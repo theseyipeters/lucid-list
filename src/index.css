@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Matter";
+}
+
+@font-face {
+	font-family: "Matter";
+	src: url("/fonts/Matter-Light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Matter";
+	src: url("/fonts/Matter-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Matter";
+	src: url("/fonts/Matter-Medium.ttf") format("truetype");
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Matter";
+	src: url("/fonts/Matter-Semibold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Matter";
+	src: url("/fonts/Matter-Bold.ttf") format("truetype");
+	font-weight: 700;
+	font-style: normal;
+}
+.font-mono {
+	font-family: monospace;
+}
+.font-matter {
+	font-family: "Matter";
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}

@@ -1,18 +1,16 @@
 import React from "react";
 
-interface InputFieldProps {
+interface TextAreaProps {
 	placeholder: string;
-	onClick?: React.MouseEventHandler<HTMLInputElement>;
-	type: string;
-	onChange: React.ChangeEventHandler<HTMLInputElement>;
+	onClick?: React.MouseEventHandler<HTMLTextAreaElement>;
+	onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
 	value: string;
 	name: string;
 }
 
-const InputField: React.FC<InputFieldProps> = ({
+const TextArea: React.FC<TextAreaProps> = ({
 	placeholder,
 	onClick,
-	type,
 	onChange,
 	value,
 	name,
@@ -20,18 +18,17 @@ const InputField: React.FC<InputFieldProps> = ({
 	return (
 		<div className="w-full">
 			<div className="w-full h-fit border-b mt-[13px] flex flex-row justify-between items-center">
-				<input
-					type={type}
+				<textarea
 					onChange={onChange}
 					placeholder={placeholder}
 					value={value}
 					name={name}
 					onClick={onClick}
-					className="border-none w-full h-[48px] font-matter py-5 bg-transparent placeholder:text-black/30 focus:outline-none text-base text-white-1"
+					className="border-none w-full h-[118px] font-matter py-5 bg-transparent placeholder:text-black/30 focus:outline-none text-base text-white-1"
 				/>
 			</div>
 		</div>
 	);
 };
 
-export default InputField;
+export default TextArea;
