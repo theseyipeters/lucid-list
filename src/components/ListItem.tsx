@@ -1,5 +1,5 @@
 import EditIcon from "../svgs/EditIcon";
-import TrashIcon from "../svgs/TrashIcon";
+// import TrashIcon from "../svgs/TrashIcon";
 
 const ListItem = ({ task }: any) => {
 	console.log(task);
@@ -12,7 +12,7 @@ const ListItem = ({ task }: any) => {
 						: "text-yellow-2 hover:text-yellow-2/50"
 				}`}>
 				{task.title} -
-				<span className="ml-2 text-gray-400 font-light text-sm">
+				<span className="hidden lg:inline-block ml-2 text-gray-400 font-light text-sm">
 					[{task.description}]
 				</span>
 			</h4>

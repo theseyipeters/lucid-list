@@ -40,7 +40,7 @@ const CreateTask: React.FC<CreateTaskProps> = ({ onClose }) => {
 				onClick={onClose}
 				className="absolute inset-0 bg-black opacity-80"></div>
 
-			<div className="h-[400px] w-[40%] bg-white z-30 rounded-2xl p-10">
+			<div className="h-[400px] w-[90%] lg:w-[50%] bg-white z-30 rounded-2xl p-10">
 				<div className="flex flex-row items-center justify-between">
 					<h2 className="text-xl font-semibold">Create new task</h2>
 					<div onClick={onClose}>

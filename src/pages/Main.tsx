@@ -28,13 +28,13 @@ const Main = () => {
 
 	return (
 		<>
-			<div className="mt-[120px] mb-[20px] flex flex-col gap-8 border w-full mx-[20px] bg-white rounded-lg p-10 overflow-hidden">
-				<div className="w-full flex flex-row items-center justify-between">
-					<h1 className="text-2xl font-semibold">Welcome Oluwaseyi,</h1>
+			<div className=" mt-[120px] mb-[20px] flex flex-col gap-8 border w-full mx-[20px] bg-white rounded-lg p-10 overflow-hidden">
+				<div className="w-full flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
+					<h1 className="text-2xl font-semibold">Welcome Jerry,</h1>
 
 					<Button
 						onClick={handleOpenCreateTask}
-						className="hover:text-white/85 transition duration-300 ease-in-out bg-black w-fit text-white h-[45px] px-8 py-[13px] flex items-center justify-center rounded-full">
+						className="hover:text-white/85 transition duration-300 ease-in-out bg-black w-full lg:w-fit text-white h-[45px] px-8 py-[13px] flex items-center justify-center rounded-full">
 						<span className="flex flex-row items-center gap-3 w-full h-full">
 							{" "}
 							<PlusIcon />
@@ -43,13 +43,13 @@ const Main = () => {
 					</Button>
 				</div>
 
-				<div className="w-full grid grid-cols-3 gap-3">
+				<div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-3">
 					<TaskDetail tasks={tasks} />
 					<TaskDetail2 tasks={tasks} />
 					<TaskDetail3 tasks={tasks} />
 				</div>
 
-				<div className="flex flex-col gap-4 overflow-auto">
+				<div className="flex flex-col gap-4 overflow-auto h-full">
 					<div className="w-full flex flex-row items-center justify-between">
 						<h1 className="text-lg font-medium">Recent tasks</h1>
 
@@ -59,17 +59,36 @@ const Main = () => {
 							View all
 						</Link>
 					</div>
-					<div className="flex flex-col gap-3 h-full overflow-scroll">
-						{tasks.map((task) => (
-							<div
-								className="cursor-pointer hover:text-black/40 transition-all duration-300 ease-in-out"
-								onClick={() => handleOpenTaskModal(task.id)}>
-								<ListItem
-									key={task.id}
-									task={task}
-								/>
+					<div className="h-full">
+						{tasks.length === 0 ? (
+							<div className="border border-black/30 rounded-2xl flex flex-col gap-3 h-full overflow-scroll items-center justify-center">
+								<div className="flex flex-col gap-3 items-center justify-center">
+									<h1>Your list is empty</h1>
+									<Button
+										onClick={handleOpenCreateTask}
+										className="hover:text-white/85 transition duration-300 ease-in-out bg-black w-fit text-white h-[45px] px-8 py-[13px] flex items-center justify-center rounded-full">
+										<span className="flex flex-row items-center gap-3 w-full h-full">
+											{" "}
+											<PlusIcon />
+											Create new task
+										</span>
+									</Button>
+								</div>
 							</div>
-						))}
+						) : (
+							<div className="flex flex-col gap-3 h-full overflow-scroll">
+								{tasks.map((task) => (
+									<div
+										className="cursor-pointer hover:text-black/40 transition-all duration-300 ease-in-out"
+										onClick={() => handleOpenTaskModal(task.id)}>
+										<ListItem
+											key={task.id}
+											task={task}
+										/>
+									</div>
+								))}
+							</div>
+						)}
 					</div>
 				</div>
 			</div>

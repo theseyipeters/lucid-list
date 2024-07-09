@@ -4,7 +4,7 @@ import Main from "./Main";
 
 const Home = () => {
 	return (
-		<div className="h-screen bg-gray-1">
+		<div className="h-fit lg:h-screen bg-gray-1">
 			<Header />
 
 			<div className="flex flex-row h-full">

@@ -1,7 +1,6 @@
 import LucidLogo from "../../svgs/LucidLogo";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SearchBox from "../ui/SearchBox";
-import avatar from "../../assets/avatar.svg";
 import Dropdown from "../../svgs/Dropdown";
 
 const Header = () => {
@@ -17,22 +16,20 @@ const Header = () => {
 						</Link>
 					</div>
 
-					<div className="ml-[110px]">
+					<div className="hidden lg:flex ml-[110px]">
 						<SearchBox placeholder={"Search for anything..."} />
 					</div>
 				</div>
 
-				<div className="heading-end flex flex-row gap-4">
-					<div>
-						<img
-							src={avatar}
-							alt="avatar"
-						/>
-					</div>
+				<div className="hidden lg:flex flex-row items-center gap-4">
+					<span className="w-[60px] h-[60px] rounded-full bg-black text-white flex items-center justify-center text-3xl">
+						J
+					</span>
+
 					<div className="flex flex-col">
-						<h4 className="text-lg font-medium">Oluwaseyi Peter</h4>
+						<h4 className="text-lg font-medium">Jerry Nwosu</h4>
 						<p className="text-sm tracking-[-0.24px] font-light">
-							Software Engineer
+							Sr. Software Engineer
 						</p>
 					</div>
 
