@@ -1,8 +1,17 @@
+import React from "react";
 import EditIcon from "../svgs/EditIcon";
-// import TrashIcon from "../svgs/TrashIcon";
 
-const ListItem = ({ task }: any) => {
-	console.log(task);
+interface Task {
+	title: string;
+	description: string;
+	status: "pending" | "completed";
+}
+
+interface ListItemProps {
+	task: Task;
+}
+
+const ListItem: React.FC<ListItemProps> = ({ task }) => {
 	return (
 		<div className="w-full border border-black/10 rounded-lg px-4 py-[10px] flex flex-row items-center justify-between">
 			<h4
@@ -18,7 +27,7 @@ const ListItem = ({ task }: any) => {
 			</h4>
 			<div className="flex flex-row gap-4 items-center">
 				<span
-					className={`text-xs text-gray-400 capitalize px-5 py-2 rounded-full font-light ${
+					className={`hidden md:block text-xs text-gray-400 capitalize px-5 py-2 rounded-full font-light ${
 						task.status === "pending"
 							? "bg-yellow-1 text-yellow-2"
 							: "bg-green-1 text-green-2"
@@ -26,7 +35,7 @@ const ListItem = ({ task }: any) => {
 					{task.status}
 				</span>
 
-				<div className="flex flex-row gap-2">
+				<div className="flex flex-row gap-2 text-teal-1 hover:text-teal-1/50 transition-all duration-500 ease-in-out">
 					<button className="w-[23px]">
 						<EditIcon />
 					</button>

@@ -4,7 +4,7 @@ export interface Task {
 	id: number;
 	title: string;
 	description: string;
-	status: "pending" | "completed"; // Correct types for status
+	status: "pending" | "completed";
 }
 
 export interface TaskState {
@@ -21,7 +21,11 @@ const taskSlice = createSlice({
 	reducers: {
 		addTask: (
 			state,
-			action: PayloadAction<{ title: string; description: string }>
+			action: PayloadAction<{
+				title: string;
+				description: string;
+				status: string;
+			}>
 		) => {
 			const newTask: Task = {
 				id: Date.now(),

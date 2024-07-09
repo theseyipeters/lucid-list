@@ -5,6 +5,7 @@ import Arrow from "../../svgs/Arrow";
 interface NavItem {
 	name: string;
 	link: string;
+	isClickable: boolean;
 }
 
 const Sidebar: React.FC = () => {
@@ -14,18 +15,22 @@ const Sidebar: React.FC = () => {
 		{
 			name: "Dashboard",
 			link: "/",
+			isClickable: true,
 		},
 		{
 			name: "Tasks",
 			link: "/tasks",
+			isClickable: false,
 		},
 		{
 			name: "Profile",
 			link: "/profile",
+			isClickable: false,
 		},
 		{
 			name: "Settings",
 			link: "/settings",
+			isClickable: false,
 		},
 	];
 
@@ -57,9 +62,18 @@ const Sidebar: React.FC = () => {
 							to={item.link}
 							className={({ isActive }) =>
 								`${
-									isActive ? "active-link" : "hover:bg-gray-200"
-								}  w-full px-[45px] h-[50px] py-3 font-normal`
-							}>
+									isActive ? "active-link" : "hover:bg-gray-100"
+								} w-full px-[45px] h-[50px] py-3 font-normal ${
+									item.isClickable
+										? ""
+										: "cursor-not-allowed hover:bg-transparent text-black/30"
+								}`
+							}
+							onClick={(e) => {
+								if (!item.isClickable) {
+									e.preventDefault();
+								}
+							}}>
 							{item.name}
 						</NavLink>
 					))}
@@ -73,8 +87,11 @@ const Sidebar: React.FC = () => {
 						className={({ isActive }) =>
 							`${
 								isActive ? "active-link" : ""
-							} hover:bg-gray-200 w-full px-[45px] h-[50px] py-3 font-normal`
-						}>
+							} hover:bg-transparent text-black/30 cursor-not-allowed w-full px-[45px] h-[50px] py-3 font-normal`
+						}
+						onClick={(e) => {
+							e.preventDefault();
+						}}>
 						Trash
 					</NavLink>
 
