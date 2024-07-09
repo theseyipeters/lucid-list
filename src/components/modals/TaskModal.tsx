@@ -55,7 +55,7 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onClose }) => {
 				onClick={onClose}
 				className="absolute inset-0 bg-black opacity-80"></div>
 
-			<div className="h-fit lg:h-[400px] w-[90%] lg:w-[60%] bg-white z-30 rounded-2xl p-10">
+			<div className="h-fit lg:h-[400px] w-[90%] lg:w-[60%] xl:w-[40%] bg-white z-30 rounded-2xl p-10">
 				<div className="flex flex-row items-center justify-between">
 					<h2 className="text-xl font-semibold">Task</h2>
 					<button onClick={onClose}>
@@ -84,7 +84,7 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onClose }) => {
 					<div className="w-full lg:w-fit flex flex-row justify-between lg:justify-normal">
 						<Button
 							onClick={handleDeleteTask}
-							className="bg-red-700 text-white p-2 rounded-full mr-2 h-[45px] px-4 lg:px-8 py-[13px] flex items-center">
+							className="bg-red-700 text-white p-2 rounded-full mr-2 h-[45px] px-4 lg:px-8 py-[13px] flex items-center cursor-pointer">
 							<span className="flex flex-row items-center justify-center gap-2 text-white w-full h-full">
 								<span className="w-[23px]">
 									<TrashIcon />
@@ -96,9 +96,9 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onClose }) => {
 							onClick={handleToggleTaskStatus}
 							className={`${
 								task.status === "completed"
-									? "bg-yellow-1 text-yellow-2"
-									: "bg-green-1 text-green-2"
-							} rounded-full mr-2 h-[45px] px-4 lg:px-8 py-[13px] flex flex-row items-center justify-center`}>
+									? "bg-yellow-1 text-yellow-2 border border-yellow-2/10"
+									: "bg-green-1 text-green-2 border border-green-2/10"
+							} rounded-full mr-2 h-[45px] px-4 lg:px-8 py-[13px] flex flex-row items-center justify-center cursor-pointer`}>
 							<span className="flex flex-row gap-2">
 								<span className="w-[23px]">
 									<Bookmark />
@@ -113,7 +113,7 @@ const TaskModal: React.FC<TaskModalProps> = ({ task, onClose }) => {
 					</div>
 					<Button
 						onClick={handleEditTask}
-						className="w-full md:w-fit lg:w-fit bg-teal-1 text-white p-2 rounded-full mr-2 h-[45px] px-8 py-[13px] flex items-center justify-center">
+						className="w-full md:w-fit lg:w-fit bg-teal-1 text-white p-2 rounded-full mr-2 h-[45px] px-8 py-[13px] flex items-center justify-center cursor-pointer">
 						Save
 					</Button>
 				</div>
